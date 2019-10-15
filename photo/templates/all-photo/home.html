@@ -19,7 +19,7 @@
          </div>
         </div>
         
-        
+
             <div class="modal fade" id="modal-default{{picture.id}}" role="dialog">
               <div class="modal-dialog">
                 <div class="modal-content">
@@ -29,11 +29,12 @@
                             
           
       
-                    <h5>Description: {{picture.description}}</h5>
-                    <h5>Name: {{ picture.name }} </h5>
-                    <h5>Location where the image was taken: {{picture.location}}</h5>
+                    
+                    <h5>Name: {{ picture.name }} </h5><br>
+                    <h5>Description: {{picture.description}}</h5><br>
+                    <h5>Location where the image was taken: {{picture.location}}</h5><br>
  
-                    <h5>Category: {{picture.category}}</h5>
+                    <h5>Category: {{picture.category}}</h5><br>
                     <input class="form-control" type="text" value="http://127.0.0.1:8000{{picture.image.url}}" id="url">
                       <button type="button" class="btn-btn-default" data-dismiss="modal" onclick="myFunction()">Get image link</button>
                       </div>
