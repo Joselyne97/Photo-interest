@@ -31,7 +31,6 @@ Joselyne MPAYIMANA
 
 =======
  https://pers-gallery.herokuapp.com/
->>>>>>> 8c280494f51ddb84971dfc2d8456e3cb0391c46d
 
  ## Copyright and license information:
 
