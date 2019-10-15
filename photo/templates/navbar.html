@@ -1,0 +1,31 @@
+<nav class="navbar " style="background-color:black; color: blueviolet">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" id="victor" href="{% url 'picture' %}"> <h2>The Personal Gallery app</h2></a>
+      </div>
+            <ul class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Filter by Location
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                {% for somewhere in locations %}
+                <a class="dropdown-item"  href="/?location={{somewhere.id}}">{{somewhere.location}}</a>
+                <div class="dropdown-divider"></div>
+                {% endfor %}
+              </div>
+            </ul>
+      
+      <div class="col-sm-4 col-md-4 navbar-right">
+        <form class="navbar-form" role="search" action="{% url 'search_results' %}">
+          <div class="input-group">
+            <input type="text"  placeholder="Search categories " name="picture">
+            <div class="input-group-btn">
+              <button class="btn btn-info" type="submit">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+   </nav>
+
+   

@@ -1,0 +1,72 @@
+{%extends 'all-photo/base.html'%}
+
+{% block content %}
+{{block.super}}
+
+<div class="container" style="font-family: 'Rochester', cursive;">
+
+  <div class="row">
+ {% for picture in photo %}
+ <div class= "col-md-6 details">
+    
+          <div class="row">
+            <div class= "col-md-4">
+          
+          <button type="button" class="btn-btn-secondary" data-toggle="modal" data-target="#modal-default{{picture.id}}">
+              <img src="{{picture.image.url}}" class="img-responsive" alt="Image" style="width: 300px; height: 240px;">
+            </button>
+         </div>
+        </div>
+        
+            <div class="modal fade" id="modal-default{{picture.id}}" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-body">
+                         
+                              <img src="{{picture.image.url}}" class="img-responsive" alt="" style="width: 300px; height: 240px;">
+                            
+          
+      
+                    <h5>Description: {{picture.description}}</h5>
+                    <h5>Name: {{ picture.name }} </h5>
+                    <h5>Location where the image was taken: {{picture.location}}</h5>
+ 
+                    <h5>Category: {{picture.category}}</h5>
+                    <input class="form-control" type="text" value="http://127.0.0.1:8000{{picture.image.url}}" id="url">
+                      <button type="button" class="btn-btn-default" data-dismiss="modal" onclick="myFunction()">Get image link</button>
+                      </div>
+                      
+
+                  </div>
+
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+                  </div>
+
+              </div>
+            </div>
+            </div>
+            
+</div>
+</div>
+  
+    {% empty %}
+    <div class="row">
+      <h2 class="text-center">There is no pictures</h2>
+    </div>
+    {% endfor %}
+
+    <div>
+        <script>
+          function myFunction(){
+            var copyText=document.getElementById("url");
+            copyText.select();
+            copyText.setSelectionRange(0, 999999)
+            document.execCommand("copy");
+          }
+        </script>
+      </div>
+  
+  </div>
+
+{% endblock %}
