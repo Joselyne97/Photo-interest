@@ -32,13 +32,16 @@ class CategoryTestClass(TestCase):
 class ImagesTestClass(TestCase):
 
     def setUp(self):
+        
        # Creating image and saving it
         self.new_picture= Images(image = 'images.jpg', name = 'picture', description ='testing for description', location ='kigali', category ='food')
         self.new_picture.save()
 
+
        # Creating location and saving it
         self.new_picture.location.add(location)
         self.new_location.save_location()
+
 
        # Creating category and saving it
         self.new_picture.category.add(self.new_category)
