@@ -29,7 +29,6 @@ Joselyne MPAYIMANA
 
 <<<<<<< HEAD
 
-=======
  https://pers-gallery.herokuapp.com/
 
  ## Copyright and license information:
