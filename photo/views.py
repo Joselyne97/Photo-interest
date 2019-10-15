@@ -13,7 +13,7 @@ def photo_today(request):
         photo = Images.search_results(request.GET.get('search_term'))
     else:
         photo = Images.objects.all()
-    return render(request, 'all-photo/today.html', {"photo":photo, "locations":locations})
+    return render(request, 'all-photo/home.html', {"photo":photo, "locations":locations})
 
 
 
